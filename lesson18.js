@@ -16,8 +16,16 @@
 })
 */
 async function greeting(){
-  const respose=await fetch('https://supersimplebackend.dev/greeting');
+  try{const respose=await fetch('https://supersimplebackend.dev/greeting');
   const greetingResponse= await respose.text();
   console.log(greetingResponse);
+  }
+  catch(error){
+    if (error.name === 'AbortError') {
+      console.error('Request timed out');
+    } else {
+      console.error('Fetch error:', error.message);
+    }
+  }
 }
 greeting();
