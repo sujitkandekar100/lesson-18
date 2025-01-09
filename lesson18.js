@@ -9,8 +9,15 @@
       xhr.send();
 
 */
-const promise=fetch('https://supersimplebackend.dev/greeting').then((response)=>{
+/*const promise=fetch('https://supersimplebackend.dev/greeting').then((response)=>{
   return response.text();
 }).then((text)=>{
   console.log(text);
 })
+*/
+async function greeting(){
+  const respose=await fetch('https://supersimplebackend.dev/greeting');
+  const greetingResponse= await respose.text();
+  console.log(greetingResponse);
+}
+greeting();
