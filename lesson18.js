@@ -33,7 +33,7 @@ greeting();
 https://supersimplebackend.dev/greeting
 */
 async function postGreeting() {
-  const response = await fetch('https://supersimplebackend.dev/greeting', {
+  const response = await fetch('https://amazon.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
