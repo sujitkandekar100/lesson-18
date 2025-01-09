@@ -15,9 +15,10 @@
   console.log(text);
 })
 */
-async function greeting(){
+/*async function greeting(){
   try{const respose=await fetch('https://supersimplebackend.dev/greeting');
   const greetingResponse= await respose.text();
+
   console.log(greetingResponse);
   }
   catch(error){
@@ -29,3 +30,20 @@ async function greeting(){
   }
 }
 greeting();
+https://supersimplebackend.dev/greeting
+*/
+async function postGreeting() {
+  const response = await fetch('https://supersimplebackend.dev/greeting', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: 'Super'
+    })
+  });
+
+  const text = await response.text();
+  console.log(text);
+}
+postGreeting();
