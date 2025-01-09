@@ -1,5 +1,5 @@
 
-const xhr = new XMLHttpRequest();
+/*const xhr = new XMLHttpRequest();
 
       xhr.addEventListener('load', () => {
         console.log(xhr.response);
@@ -7,3 +7,10 @@ const xhr = new XMLHttpRequest();
 
       xhr.open('GET', 'https://supersimplebackend.dev/greeting');
       xhr.send();
+
+*/
+const promise=fetch('https://supersimplebackend.dev/greeting').then((response)=>{
+  return response.text();
+}).then((text)=>{
+  console.log(text);
+})
