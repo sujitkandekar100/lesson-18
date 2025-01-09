@@ -33,7 +33,7 @@ greeting();
 https://supersimplebackend.dev/greeting
 */
 async function postGreeting() {
-  const response = await fetch('https://amazon.com', {
+  try{const response = await fetch('https://amazon.com', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -45,5 +45,9 @@ async function postGreeting() {
 
   const text = await response.text();
   console.log(text);
+}
+catch(error){
+  console.log('CRS error.Your request was blocked by the backend.')
+}
 }
 postGreeting();
