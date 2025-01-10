@@ -8,9 +8,11 @@ import '../data/backend-practice.js';
 async function loadPage() {
   try {
     // throw 'error1';
-
-    await loadProductsFetch();
-    await loadCartFetch();
+     await Promise.all([
+     loadProductsFetch(),
+     loadCartFetch()
+     ]);
+    
     /*const value = await new Promise((resolve, reject) => {
       // throw 'error2';
       loadCart(() => {
